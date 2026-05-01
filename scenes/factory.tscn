@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://djik37jpmhol3"]
+
+[ext_resource type="Script" uid="uid://b3ukncf6rqk0g" path="res://script/building.gd" id="1_lmr8u"]
+[ext_resource type="Texture2D" uid="uid://dadsp5m36njja" path="res://assets/factory.png" id="1_r3gb1"]
+
+[node name="factory" type="Node2D" unique_id=1227480362 groups=["building"]]
+script = ExtResource("1_lmr8u")
+building_type = "factory"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1643538386]
+texture = ExtResource("1_r3gb1")
+centered = false
+
+[node name="Label" type="Label" parent="." unique_id=1381089735]
+offset_left = -11.0
+offset_top = -23.0
+offset_right = 29.0
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Line2D" type="Line2D" parent="." unique_id=620501178]
+position = Vector2(8, 8)
+points = PackedVector2Array(0, 0)
+width = 8.0
+default_color = Color(0.25882354, 0.25882354, 0.25882354, 1)

@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://cgqhamad2ls30"]
+
+[ext_resource type="Script" uid="uid://ciyjebr0vmeth" path="res://script/main_page.gd" id="1_w2a7v"]
+[ext_resource type="Texture2D" uid="uid://dddn858rtqcwa" path="res://assets/Little Factory asset pack/tilesets/wall 16x16.png" id="2_xljpf"]
+
+[node name="MainPage" type="MarginContainer" unique_id=1445965567]
+texture_repeat = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w2a7v")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2101005262]
+layout_mode = 2
+texture = ExtResource("2_xljpf")
+stretch_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=715264233]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="NewGame" type="LinkButton" parent="VBoxContainer" unique_id=496475642]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.17923622, 0.17923622, 0.35419908, 1)
+theme_override_font_sizes/font_size = 32
+text = "New Game"
+underline = 2
+
+[node name="Credit" type="LinkButton" parent="VBoxContainer" unique_id=236495503]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.17923622, 0.17923622, 0.35419908, 1)
+theme_override_font_sizes/font_size = 32
+text = "Credit"
+underline = 2
+
+[node name="Exit" type="LinkButton" parent="VBoxContainer" unique_id=443035239]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.17923622, 0.17923622, 0.35419908, 1)
+theme_override_font_sizes/font_size = 32
+text = "Quit"
+underline = 2
+
+[connection signal="pressed" from="VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/Credit" to="." method="_on_credit_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

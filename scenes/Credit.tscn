@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://dscn4lpjncmy5"]
+
+[ext_resource type="Texture2D" uid="uid://dddn858rtqcwa" path="res://assets/Little Factory asset pack/tilesets/wall 16x16.png" id="1_cpnb5"]
+[ext_resource type="Script" uid="uid://b313p2ovwsk6w" path="res://script/credit.gd" id="1_s1sh2"]
+
+[node name="Credit" type="MarginContainer" unique_id=314169991]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s1sh2")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2037821349]
+layout_mode = 2
+texture = ExtResource("1_cpnb5")
+stretch_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=308168350]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer" unique_id=633879163]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer" unique_id=1431731510]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Assets & Graphic"
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer" unique_id=2061620766]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "      Little Factory Asset Pack by turturi"
+
+[node name="Label3" type="Label" parent="VBoxContainer/VBoxContainer" unique_id=1969566166]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Lead Developer & Programmer"
+
+[node name="Label4" type="Label" parent="VBoxContainer/VBoxContainer" unique_id=454222036]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "      MrBanana9410"
+
+[node name="LinkButton" type="LinkButton" parent="VBoxContainer" unique_id=1100994957]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Back"
+underline = 2
+
+[connection signal="pressed" from="VBoxContainer/LinkButton" to="." method="_on_link_button_pressed"]

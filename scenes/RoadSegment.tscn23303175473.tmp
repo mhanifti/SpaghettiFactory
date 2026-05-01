@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bw5wn7d4mvytq"]
+
+[ext_resource type="Script" uid="uid://qqboaraqxv1y" path="res://scenes/road_segment.gd" id="1_poewy"]
+
+[sub_resource type="Curve2D" id="Curve2D_poewy"]
+
+[node name="RoadSegment" type="Path2D" unique_id=1341074747]
+texture_repeat = 2
+curve = SubResource("Curve2D_poewy")
+script = ExtResource("1_poewy")
+
+[node name="Line2D" type="Line2D" parent="." unique_id=375876033]
+width = 40.0
+default_color = Color(0.4045111, 0.40451115, 0.4045111, 1)
+texture_mode = 1

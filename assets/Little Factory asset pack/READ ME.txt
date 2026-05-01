@@ -1,0 +1,38 @@
+
+
+Hi, thanks for downloading my asset pack. 
+	-- Turturi
+
+-----
+
+Asset pack based on sprites I made for a jam game "Just 3 Minutes".
+
+This asset pack features:
+	4 characters with walking and idle animations
+	conveyor belt animated tileset
+	supports for conveyor belt tileset
+	floor and wall tileset
+	4 machines you can put on the conveyor belt
+	12 boxes with 4 inventory open sprites
+	3 lockers with 3 inventory open sprites
+	6 tool sprites with mini versions
+
+The characters are 16x16, but not everything else is (still, these sprites do work well together). The tools and boxes have different dimensions, and the factory line is 21x21. Every sprite sheet and tileset has its dimensions written in their name.
+
+I would love to see some games made with this asset pack, so feel free to link them in the comments. If you have some ideas of what to add to the asset pack, you can also let me know in the comments. I don't know if I will be developing if further, but maybe there will be some small updates.
+
+
+------
+
+Licence
+
+Credit is required (for example, with link: https://turturi.itch.io/little-factory​).​
+
+You can:
+	edit the assets
+	use it for non-commercial and commercial products
+
+You can't:
+	resell or redistribute the asset pack, even if modified
+	use it to train AI
+	use it in NFT's, crypto, gambling etc. related projects

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c4wdchyleke2f"]
+
+[ext_resource type="Script" uid="uid://otyjl786dta8" path="res://script/agent.gd" id="1_7e1ma"]
+[ext_resource type="Texture2D" uid="uid://3tujegrmfa8u" path="res://assets/truck_empty.png" id="2_7e1ma"]
+
+[sub_resource type="Curve2D" id="Curve2D_5hfgq"]
+
+[node name="Agent" type="Node2D" unique_id=256963755]
+script = ExtResource("1_7e1ma")
+
+[node name="Path2D" type="Path2D" parent="." unique_id=1498733426]
+curve = SubResource("Curve2D_5hfgq")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1987392450]
+h_offset = 7.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D" unique_id=100222573]
+z_index = 5
+rotation = 1.5707964
+texture = ExtResource("2_7e1ma")
+offset = Vector2(4, 0)

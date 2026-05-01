@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://btwljcm1jyser"]
+
+[ext_resource type="Texture2D" uid="uid://bkkmiek8n1veb" path="res://assets/road2.png" id="1_811qs"]
+
+[node name="Road" type="Line2D" unique_id=2049627407]
+z_index = 1
+width = 16.0
+texture = ExtResource("1_811qs")
+texture_mode = 1
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true

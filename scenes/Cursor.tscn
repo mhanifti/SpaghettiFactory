@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cf85pqye214gw"]
+
+[ext_resource type="Script" uid="uid://bujbxoeeb0ym5" path="res://script/cursor.gd" id="2_pefll"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3evkt"]
+
+[node name="Cursor" type="Sprite2D" unique_id=1567630316]
+script = ExtResource("2_pefll")
+default_cursor = SubResource("CompressedTexture2D_3evkt")

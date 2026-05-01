@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://d2oxrx4wji5jp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7r6km"]
+radius = 31.0
+
+[node name="SnapSegment" type="Area2D" unique_id=1999990475]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=324181121]
+shape = SubResource("CircleShape2D_7r6km")
