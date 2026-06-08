@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://bfoxm1we7033d"]
+
+[ext_resource type="Texture2D" uid="uid://dddn858rtqcwa" path="res://assets/Little Factory asset pack/tilesets/wall 16x16.png" id="1_cfv3y"]
+[ext_resource type="Script" uid="uid://d05imup2tfjjp" path="res://scenes/tutorial.gd" id="1_ci5ev"]
+[ext_resource type="Texture2D" uid="uid://d0v0pk57rdmfj" path="res://assets/tutorial_1.png" id="3_pgr2e"]
+[ext_resource type="Texture2D" uid="uid://dgv7gwakmpujt" path="res://assets/tutorial_2.png" id="4_twv1b"]
+[ext_resource type="Texture2D" uid="uid://bs8bnwyve513p" path="res://assets/tutorial_3.png" id="5_y0w3d"]
+[ext_resource type="Texture2D" uid="uid://cukokjnd0ja4p" path="res://assets/tutorial_4.png" id="6_u5f0c"]
+
+[node name="Tutorial" type="MarginContainer" unique_id=1132486297]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ci5ev")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=708879082]
+layout_mode = 2
+texture = ExtResource("1_cfv3y")
+stretch_mode = 1
+
+[node name="LinkButton" type="LinkButton" parent="." unique_id=383360224]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Back"
+underline = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=675948686]
+custom_minimum_size = Vector2(1000, 500)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=510625115]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=1520253981]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer" unique_id=690138373]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+texture = ExtResource("3_pgr2e")
+expand_mode = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/HBoxContainer" unique_id=1522467538]
+custom_minimum_size = Vector2(600, 100)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 24
+text = "1. Klik Extractor atau Tekan 3 untuk membuat Extractor
+2. Tempatkan di area Ore yang masih kosong"
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=1369341594]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=1368216534]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+texture = ExtResource("4_twv1b")
+expand_mode = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=1294039167]
+custom_minimum_size = Vector2(600, 100)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 24
+text = "3. Klik Factory atau Tekan 4 untuk membuat Factory
+4. Tempatkan di area mana saja yang masih kosong"
+vertical_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=911283088]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer3" unique_id=629231365]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+texture = ExtResource("5_y0w3d")
+expand_mode = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/HBoxContainer3" unique_id=1414424579]
+custom_minimum_size = Vector2(600, 100)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 24
+text = "5. Klik Road atau Tekan 1/2 untuk membuat Road
+6. Sambungkan antara Extractor dengan Factory (Bisa dengan beberapa Road, asal saling terhubung di ujungnya)"
+vertical_alignment = 1
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=1856270030]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer4" unique_id=923979152]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+texture = ExtResource("6_u5f0c")
+expand_mode = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/HBoxContainer4" unique_id=1747557049]
+custom_minimum_size = Vector2(600, 100)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 24
+text = "7. Pilih Arah dan Tujuan pada Dropdown di atas kiri, lalu spawn untuk men-spawn mobil pengangkut."
+vertical_alignment = 1
+
+[connection signal="pressed" from="LinkButton" to="." method="_on_link_button_pressed"]

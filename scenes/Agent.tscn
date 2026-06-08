@@ -14,6 +14,12 @@ curve = SubResource("Curve2D_5hfgq")
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1987392450]
 h_offset = 7.0
 
+[node name="Label" type="Label" parent="Path2D/PathFollow2D" unique_id=301108333]
+z_index = 2
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+
 [node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D" unique_id=100222573]
 z_index = 5
 rotation = 1.5707964

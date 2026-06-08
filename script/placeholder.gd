@@ -148,7 +148,7 @@ func set_placeholder(mode_name: String):
 		z_index = 100
 		visible = false
 
-func _on_tile_map_layer_tile_hovered(coords: Variant, produce: Variant, is_occupied: Variant, is_coal: Variant, is_iron: Variant, is_copper: Variant) -> void:
+func _on_tile_map_layer_tile_hovered(coords: Variant, is_interactive: Variant, produce: Variant, is_occupied: Variant, is_coal: Variant, is_iron: Variant, is_copper: Variant) -> void:
 	if is_coal:
 		current_ore = "coal"
 	elif is_iron:
@@ -159,29 +159,38 @@ func _on_tile_map_layer_tile_hovered(coords: Variant, produce: Variant, is_occup
 		current_ore = ""
 	
 	# Pastikan posisi preview mengikuti grid
-	pos = coords * 16 
+	pos = coords * 16
+	
 	
 	if Global.mode == "build":
 		visible = true
 		
 		match current_mode:
 			"extractor":
-				if not produce or is_occupied: # Sesuaikan dengan nilai 'kosong' di data kamu
+				if produce and (not Global.coors_to_building.has(pos)): # Sesuaikan dengan nilai 'kosong' di data kamu
+					self_modulate = Color(1, 1, 1, 0.7)
+					placeable = true
+					produceable = true
+				else:
 					self_modulate = Color(1, 0, 0, 0.7) # Merah: Tidak ada sumber daya
 					placeable = false
 					produceable = false
-				else:
-					# Logika pendeteksi tipe sumber daya
-					placeable = true
-					produceable = true
 					
-			"road", "factory", "croad":
+			"factory":
 				# Cek apakah tile sudah ditempati bangunan lain (Opsional tapi disarankan)
-				if is_occupied:
+				if Global.coors_to_building.has(pos):
 					self_modulate = Color(1, 0, 0, 0.7)
 					placeable = false
 				else:
 					self_modulate = Color(1, 1, 1, 0.7)
 					placeable = true
+			
+			"road", "croad":
+				if is_interactive:
+					self_modulate = Color(1, 1, 1, 0.7)
+					placeable = true
+				else:
+					self_modulate = Color(1, 0, 0, 0.7)
+					placeable = false
 	else:
 		visible = false

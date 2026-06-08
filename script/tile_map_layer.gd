@@ -20,7 +20,7 @@ func _process(delta: float) -> void:
 func _handle_tile_enter(coords: Vector2i):
 	var data = get_cell_tile_data(coords)
 	if data and data.get_custom_data("is_interactive"):
-		tile_hovered.emit(coords, data.get_custom_data("can_produce"), data.get_custom_data("is_occupied"), data.get_custom_data("is_coal"), data.get_custom_data("is_iron"), data.get_custom_data("is_copper"))
+		tile_hovered.emit(coords, data.get_custom_data("is_interactive"), data.get_custom_data("can_produce"), data.get_custom_data("is_occupied"), data.get_custom_data("is_coal"), data.get_custom_data("is_iron"), data.get_custom_data("is_copper"))
 
 func _handle_tile_occupied(coords):
 	var data = get_cell_tile_data(coords)

@@ -4,6 +4,7 @@ extends Node2D
 @onready var placeholder = $Camera2D/Placeholder
 @onready var camera = $Camera2D
 @onready var canvas = $Camera2D/CanvasLayer
+@onready var tilemap = $TileMapLayer
 @onready var mode = Global.mode
 
 @export var extractor_scene: PackedScene
@@ -31,6 +32,11 @@ func _unhandled_input(event: InputEvent) -> void:
 	if (event.is_action_pressed("cancel")):
 		Global.mode = "default"
 		custom_cursor.set_cursor_mode("normal")
+	
+	if (event is InputEventMouseButton):
+		if event.is_pressed():
+			if event.button_index == MOUSE_BUTTON_LEFT and Global.mode == "default":
+				print("Test")
 
 func _on_straight_pressed() -> void:
 	custom_cursor.set_cursor_mode("default")
@@ -80,9 +86,10 @@ func _on_placeholder_place_extractor(coors: Variant, current_ore: Variant) -> vo
 	building.z_index = 2
 	add_child(building)
 	buildings.append(building)
-	building.name = "building" + str(buildings.size())
+	building.name = "extractor_" + str(buildings.size())
 	var id_p = Global._add_road_to_astar(building.find_child("Line2D"), building.name)
 	Global.building_to_astar_point[building] = id_p
+	Global.coors_to_building[coors] = building
 	canvas.refresh_dropdowns()
 
 func _on_factory_pressed() -> void:
@@ -96,10 +103,12 @@ func _on_placeholder_place_factory(coors: Variant) -> void:
 	building.z_index = 2
 	add_child(building)
 	buildings.append(building)
-	building.name = "building" + str(buildings.size())
+	building.name = "factory_" + str(buildings.size())
 	var id_p = Global._add_road_to_astar(building.find_child("Line2D"), building.name)
 	Global.building_to_astar_point[building] = id_p
+	Global.coors_to_building[coors] = building
 	canvas.refresh_dropdowns()
 
 func _on_exit_and_save_pressed():
+	#TODO: Make Saving Progress
 	get_tree().change_scene_to_file("res://scenes/MainPage.tscn")

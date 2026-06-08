@@ -17,6 +17,10 @@ func _on_new_game_pressed():
 func _on_credit_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/Credit.tscn")
 
+#TODO: Button Continue
+
+func _on_tutorial_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/Tutorial.tscn")
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()

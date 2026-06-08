@@ -9,6 +9,7 @@ var max_stock = 10
 var sprite: Sprite2D
 var path_follow: PathFollow2D
 var curve_node: Path2D
+var label: Label
 
 var from_building: Node2D
 var to_building: Node2D
@@ -18,10 +19,12 @@ func _ready():
 	curve_node = $Path2D
 	path_follow = $Path2D/PathFollow2D
 	sprite = $Path2D/PathFollow2D/Sprite2D
+	label = $Path2D/PathFollow2D/Label
 
 func start_mission(start_node, target_node):
 	from_building = start_node
 	to_building = target_node
+	label.text = name
 	
 	# Ambil rute dari AStar (Ini biasanya Array of Vector2 Global)
 	var route = Global.get_route(from_building.global_position, to_building.global_position)

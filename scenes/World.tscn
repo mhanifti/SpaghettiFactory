@@ -74,6 +74,38 @@ custom_data_layer_5/name = "is_copper"
 custom_data_layer_5/type = 1
 sources/0 = SubResource("TileSetAtlasSource_d1c63")
 
+[sub_resource type="InputEventKey" id="InputEventKey_c0d7e"]
+device = -1
+keycode = 49
+unicode = 49
+
+[sub_resource type="Shortcut" id="Shortcut_o1tcx"]
+events = [SubResource("InputEventKey_c0d7e")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_rpuxp"]
+device = -1
+keycode = 50
+unicode = 50
+
+[sub_resource type="Shortcut" id="Shortcut_nthub"]
+events = [SubResource("InputEventKey_rpuxp")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_44lqw"]
+device = -1
+keycode = 51
+unicode = 51
+
+[sub_resource type="Shortcut" id="Shortcut_dwmkc"]
+events = [SubResource("InputEventKey_44lqw")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_30fn3"]
+device = -1
+keycode = 52
+unicode = 52
+
+[sub_resource type="Shortcut" id="Shortcut_dgldv"]
+events = [SubResource("InputEventKey_30fn3")]
+
 [node name="World" type="Node2D" unique_id=144676163]
 script = ExtResource("1_32lhk")
 extractor_scene = ExtResource("2_h1bdy")
@@ -107,85 +139,95 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Camera2D/CanvasLayer/MarginContainer" unique_id=511493030]
+[node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/CanvasLayer/MarginContainer" unique_id=1932297235]
+layout_mode = 2
+
+[node name="HBoxTopContainer" type="HBoxContainer" parent="Camera2D/CanvasLayer/MarginContainer/VBoxContainer" unique_id=511493030]
 layout_mode = 2
 size_flags_vertical = 0
-
-[node name="Money" type="Label" parent="Camera2D/CanvasLayer/MarginContainer/HBoxContainer2" unique_id=802383936]
-layout_mode = 2
-size_flags_horizontal = 10
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Camera2D/CanvasLayer/MarginContainer" unique_id=1762741877]
-layout_mode = 2
-size_flags_vertical = 8
 alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Camera2D/CanvasLayer/MarginContainer/HBoxContainer" unique_id=395806279]
+[node name="HBoxContainer" type="HBoxContainer" parent="Camera2D/CanvasLayer/MarginContainer/VBoxContainer/HBoxTopContainer" unique_id=395806279]
 layout_mode = 2
 
-[node name="FromOption" type="OptionButton" parent="Camera2D/CanvasLayer/MarginContainer/HBoxContainer/HBoxContainer" unique_id=1952357675]
+[node name="FromOption" type="OptionButton" parent="Camera2D/CanvasLayer/MarginContainer/VBoxContainer/HBoxTopContainer/HBoxContainer" unique_id=1952357675]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 
-[node name="ToOption" type="OptionButton" parent="Camera2D/CanvasLayer/MarginContainer/HBoxContainer/HBoxContainer" unique_id=2024934637]
+[node name="ToOption" type="OptionButton" parent="Camera2D/CanvasLayer/MarginContainer/VBoxContainer/HBoxTopContainer/HBoxContainer" unique_id=2024934637]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="Camera2D/CanvasLayer/MarginContainer/HBoxContainer/HBoxContainer" unique_id=675671427]
+[node name="Button" type="Button" parent="Camera2D/CanvasLayer/MarginContainer/VBoxContainer/HBoxTopContainer/HBoxContainer" unique_id=675671427]
 layout_mode = 2
 text = "Spawn"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/CanvasLayer/MarginContainer/HBoxContainer/HBoxContainer" unique_id=158294050]
-layout_mode = 2
-
-[node name="HBoxExit" type="HBoxContainer" parent="Camera2D/CanvasLayer/MarginContainer/HBoxContainer" unique_id=1085726490]
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-
-[node name="LinkButton" type="LinkButton" parent="Camera2D/CanvasLayer/MarginContainer/HBoxContainer/HBoxExit" unique_id=2047736965]
+[node name="LinkButton" type="LinkButton" parent="Camera2D/CanvasLayer/MarginContainer/VBoxContainer/HBoxTopContainer" unique_id=2047736965]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_colors/font_color = Color(0.7671811, 0.5962538, 0.60371125, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.5409902, 0.5409906, 0.5409905, 1)
+theme_override_colors/font_pressed_color = Color(0.45840502, 0.45840508, 0.45840502, 1)
 text = "Main Menu"
 underline = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/CanvasLayer/MarginContainer/HBoxContainer" unique_id=425262865]
+[node name="Money" type="Label" parent="Camera2D/CanvasLayer/MarginContainer/VBoxContainer/HBoxTopContainer" unique_id=802383936]
 layout_mode = 2
-alignment = 2
+size_flags_horizontal = 10
 
-[node name="RoadHBoxContainer" type="HBoxContainer" parent="Camera2D/CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1527379707]
+[node name="ScrollContainer" type="ScrollContainer" parent="Camera2D/CanvasLayer/MarginContainer/VBoxContainer" unique_id=2094822398]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/CanvasLayer/MarginContainer/VBoxContainer/ScrollContainer" unique_id=1696536988]
 layout_mode = 2
 
-[node name="Straight" type="Button" parent="Camera2D/CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer/RoadHBoxContainer" unique_id=1114554137]
+[node name="HFlowBottomContainer" type="HFlowContainer" parent="Camera2D/CanvasLayer/MarginContainer" unique_id=1396122172]
 layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Straight" type="Button" parent="Camera2D/CanvasLayer/MarginContainer/HFlowBottomContainer" unique_id=1114554137]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+shortcut = SubResource("Shortcut_o1tcx")
 icon = ExtResource("7_pdh0q")
+expand_icon = true
 
-[node name="Curve" type="Button" parent="Camera2D/CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer/RoadHBoxContainer" unique_id=1160518599]
+[node name="Curve" type="Button" parent="Camera2D/CanvasLayer/MarginContainer/HFlowBottomContainer" unique_id=1160518599]
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+shortcut = SubResource("Shortcut_nthub")
 icon = ExtResource("8_h1bdy")
+expand_icon = true
 
-[node name="BuildHBoxContainer" type="HBoxContainer" parent="Camera2D/CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=435626276]
+[node name="Extractor" type="Button" parent="Camera2D/CanvasLayer/MarginContainer/HFlowBottomContainer" unique_id=558085242]
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-
-[node name="Extractor" type="Button" parent="Camera2D/CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer/BuildHBoxContainer" unique_id=558085242]
-layout_mode = 2
+shortcut = SubResource("Shortcut_dwmkc")
 icon = ExtResource("7_b3faq")
+expand_icon = true
 
-[node name="Factory" type="Button" parent="Camera2D/CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer/BuildHBoxContainer" unique_id=1084964504]
+[node name="Factory" type="Button" parent="Camera2D/CanvasLayer/MarginContainer/HFlowBottomContainer" unique_id=1084964504]
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+shortcut = SubResource("Shortcut_dgldv")
 icon = ExtResource("10_h1bdy")
+expand_icon = true
 
 [node name="Placeholder" parent="Camera2D" unique_id=1732621299 instance=ExtResource("6_hlk0d")]
 extractor = ExtResource("7_b3faq")
 factory = ExtResource("10_h1bdy")
 
 [connection signal="tile_hovered" from="TileMapLayer" to="Camera2D/Placeholder" method="_on_tile_map_layer_tile_hovered"]
-[connection signal="pressed" from="Camera2D/CanvasLayer/MarginContainer/HBoxContainer/HBoxContainer/Button" to="Camera2D/CanvasLayer" method="_on_spawn_button_pressed"]
-[connection signal="pressed" from="Camera2D/CanvasLayer/MarginContainer/HBoxContainer/HBoxExit/LinkButton" to="." method="_on_exit_and_save_pressed"]
-[connection signal="pressed" from="Camera2D/CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer/RoadHBoxContainer/Straight" to="." method="_on_straight_pressed"]
-[connection signal="pressed" from="Camera2D/CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer/RoadHBoxContainer/Curve" to="." method="_on_curve_pressed"]
-[connection signal="pressed" from="Camera2D/CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer/BuildHBoxContainer/Extractor" to="." method="_on_extractor_pressed"]
-[connection signal="pressed" from="Camera2D/CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer/BuildHBoxContainer/Factory" to="." method="_on_factory_pressed"]
+[connection signal="pressed" from="Camera2D/CanvasLayer/MarginContainer/VBoxContainer/HBoxTopContainer/HBoxContainer/Button" to="Camera2D/CanvasLayer" method="_on_spawn_button_pressed"]
+[connection signal="pressed" from="Camera2D/CanvasLayer/MarginContainer/VBoxContainer/HBoxTopContainer/LinkButton" to="." method="_on_exit_and_save_pressed"]
+[connection signal="pressed" from="Camera2D/CanvasLayer/MarginContainer/HFlowBottomContainer/Straight" to="." method="_on_straight_pressed"]
+[connection signal="pressed" from="Camera2D/CanvasLayer/MarginContainer/HFlowBottomContainer/Curve" to="." method="_on_curve_pressed"]
+[connection signal="pressed" from="Camera2D/CanvasLayer/MarginContainer/HFlowBottomContainer/Extractor" to="." method="_on_extractor_pressed"]
+[connection signal="pressed" from="Camera2D/CanvasLayer/MarginContainer/HFlowBottomContainer/Factory" to="." method="_on_factory_pressed"]
 [connection signal="place_croad" from="Camera2D/Placeholder" to="." method="_on_placeholder_place_croad"]
 [connection signal="place_extractor" from="Camera2D/Placeholder" to="." method="_on_placeholder_place_extractor"]
 [connection signal="place_factory" from="Camera2D/Placeholder" to="." method="_on_placeholder_place_factory"]

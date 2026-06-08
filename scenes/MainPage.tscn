@@ -30,6 +30,14 @@ theme_override_font_sizes/font_size = 32
 text = "New Game"
 underline = 2
 
+[node name="Tutorial" type="LinkButton" parent="VBoxContainer" unique_id=862852686]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.17923622, 0.17923622, 0.35419908, 1)
+theme_override_font_sizes/font_size = 32
+text = "Tutorial"
+underline = 2
+
 [node name="Credit" type="LinkButton" parent="VBoxContainer" unique_id=236495503]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -46,6 +54,15 @@ theme_override_font_sizes/font_size = 32
 text = "Quit"
 underline = 2
 
+[node name="LinkButton" type="LinkButton" parent="." unique_id=523319699]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Back"
+underline = 2
+
 [connection signal="pressed" from="VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/Tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="VBoxContainer/Credit" to="." method="_on_credit_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

@@ -4,6 +4,7 @@ var mode: String = "default"
 var astar = AStar2D.new()
 var pos_to_astar = {} # Save Position as Key
 var building_to_astar_point = {}
+var coors_to_building = {}
 var money: float = 2000
 var extractor_price: int = 500
 var factory_price: int = 500

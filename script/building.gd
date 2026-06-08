@@ -12,7 +12,7 @@ var internal_stock: float = 0.0
 var current_ore: String = "default"
 
 func _process(delta):
-	label.text = str(floor(internal_stock)) + " / " + str(floor(max_stock))
+	label.text = name + '\n' + str(floor(internal_stock)) + " / " + str(floor(max_stock))
 	if is_producer:
 		if internal_stock < max_stock:
 			internal_stock = min(internal_stock + (0.5 * delta), 100)
