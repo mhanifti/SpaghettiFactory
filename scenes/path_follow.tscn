@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://b4vg88t30sieo"]
+
+[sub_resource type="GDScript" id="GDScript_tefeu"]
+script/source = "extends PathFollow2D
+
+@export var speed: float = 200.0
+
+var current_storage: int = 0
+var max_capacity: int = 10
+
+func _process(delta: float) -> void:
+	# Hitung pergerakan berdasarkan arah
+	var car = get_child(0)
+	var label = car.get_child(1)
+	
+	if label:
+		label.text = str(current_storage) + \" / \" + str(max_capacity)
+	var movement = speed * delta
+	
+	var is_from_start = self.get_meta(\"moving_forward\", true)
+	
+	if is_from_start:
+		progress += movement
+	else:
+		progress -= movement
+
+func _on_child_entered_tree(node: Node) -> void:
+	# Cek apakah yang masuk memiliki sprite (Mobil)
+	if node.find_child(\"*Sprite2D*\"):
+		print(\"Mobil masuk ke jalur!\")	
+
+func _on_child_exiting_tree(node: Node) -> void:
+	print(\"Mobil keluar dari jalur!\")
+
+func add_cargo(amount: int):
+	current_storage = clamp(current_storage + amount, 0, max_capacity)
+
+func remove_cargo(amount: int):
+	current_storage = clamp(current_storage - amount, 0, max_capacity)
+"
+
+[node name="PathFollow" type="PathFollow2D" unique_id=1735316309]
+script = SubResource("GDScript_tefeu")
+
+[connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
+[connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
