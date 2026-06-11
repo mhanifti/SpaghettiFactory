@@ -14,14 +14,23 @@ curve = SubResource("Curve2D_5hfgq")
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1987392450]
 h_offset = 7.0
 
-[node name="Label" type="Label" parent="Path2D/PathFollow2D" unique_id=301108333]
-z_index = 2
-offset_left = -20.0
-offset_top = -23.0
-offset_right = 20.0
-
 [node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D" unique_id=100222573]
 z_index = 5
 rotation = 1.5707964
 texture = ExtResource("2_7e1ma")
-offset = Vector2(4, 0)
+
+[node name="LabelContainer" type="Node2D" parent="Path2D/PathFollow2D/Sprite2D" unique_id=1704422561]
+
+[node name="Label" type="Label" parent="Path2D/PathFollow2D/Sprite2D/LabelContainer" unique_id=301108333]
+z_index = 2
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = -27.0
+offset_right = 0.9999988
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(0, 27)

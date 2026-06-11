@@ -9,6 +9,7 @@ var max_stock = 10
 var sprite: Sprite2D
 var path_follow: PathFollow2D
 var curve_node: Path2D
+var labelContainer: Node2D
 var label: Label
 
 var from_building: Node2D
@@ -19,7 +20,8 @@ func _ready():
 	curve_node = $Path2D
 	path_follow = $Path2D/PathFollow2D
 	sprite = $Path2D/PathFollow2D/Sprite2D
-	label = $Path2D/PathFollow2D/Label
+	labelContainer = $Path2D/PathFollow2D/Sprite2D/LabelContainer
+	label = $Path2D/PathFollow2D/Sprite2D/LabelContainer/Label
 
 func start_mission(start_node, target_node):
 	from_building = start_node
@@ -53,6 +55,9 @@ func _calculate_route(start_pos, end_pos):
 
 func _process(delta):
 	path_follow.progress += speed * delta
+	
+	# Adjust Label Rotation Based on Sprite Rotation
+	labelContainer.global_rotation = 0.0
 	
 	if path_follow.progress_ratio >= 0.99:
 		set_process(false)

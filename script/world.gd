@@ -82,7 +82,7 @@ func _on_placeholder_place_extractor(coors: Variant, current_ore: Variant) -> vo
 	var building: Node2D = extractor_scene.instantiate()
 	if building.has_method("set_ore"):
 		building.set_ore(current_ore)
-	building.position = coors
+	building.position = coors + Vector2i(8,8)
 	building.z_index = 2
 	add_child(building)
 	buildings.append(building)
@@ -99,7 +99,7 @@ func _on_factory_pressed() -> void:
 
 func _on_placeholder_place_factory(coors: Variant) -> void:
 	var building: Node2D = factory_scene.instantiate()
-	building.position = coors
+	building.position = coors + Vector2i(8,8)
 	building.z_index = 2
 	add_child(building)
 	buildings.append(building)
